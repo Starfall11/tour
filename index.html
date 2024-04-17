@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,13 +44,21 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/plugins/pikaday-i18n/pikaday-i18n.js"></script>
     <script>
-        // Pikaday를 사용하여 달력 기능 추가
+        // Pikaday 한글 설정
         var picker = new Pikaday({
             field: document.getElementById('date'),
             format: 'YYYY-MM-DD',
             onSelect: function(date) {
                 console.log(date);
+            },
+            i18n: {
+                previousMonth : '이전 달',
+                nextMonth     : '다음 달',
+                months        : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                weekdays      : ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
+                weekdaysShort : ['일', '월', '화', '수', '목', '금', '토']
             }
         });
 
